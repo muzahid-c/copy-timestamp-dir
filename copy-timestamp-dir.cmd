@@ -23,7 +23,7 @@ SET LOG_FILE=Backup_%LOGFILE_DATE%_%LOGFILE_TIME%.log
 REM If file is not shared then then use NET USE with user and pass to map the windows administrative share
 SET SRC="\\source\Data"
 
-REM Keep destination name without space, DON'T put "" in DEST var value
+REM Keep destination name without space, DON'T put "" in ROOT var value
 SET ROOT=\\Destination_Location
 CD /D %ROOT%
 MKDIR %FILE_DATE%%FILE_TIME% 
