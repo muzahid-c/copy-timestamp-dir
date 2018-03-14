@@ -5,7 +5,7 @@ SET LOGFILE_DATE=%DATE:~-4,4%-%DATE:~-8,3%-%DATE:~-11,2%
 REM Use below code if date format is (m/dd/yyy), Also use it in creating new folder
 REM LOGFILE_DATE=%DATE:~10,4%-%DATE:~4,2%-%DATE:~7,2%
 
-REM Added a _ for separating date from time in folder name
+REM Added an _ for separating date from time in folder name
 SET FOLDER_DATE=%DATE:~-4,4%-%DATE:~-8,3%-%DATE:~-11,2%_
 
 REM For avoiding space in time
