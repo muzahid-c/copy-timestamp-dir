@@ -30,6 +30,6 @@ MKDIR %FILE_DATE%%FILE_TIME%
 
 SET DEST=%ROOT%%FILE_DATE%%FILE_TIME%
 
-
+REM Finally copy the file
 ROBOCOPY %SRC% %DEST% /E /MT:20 /R:10 /Log:Log_Location\%LOG_FILE% /TEE
 
