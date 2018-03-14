@@ -5,7 +5,8 @@ SET LOGFILE_DATE=%DATE:~-4,4%-%DATE:~-8,3%-%DATE:~-11,2%
 REM Added a _ for separating date from time in folder name
 SET FILE_DATE=%DATE:~-4,4%-%DATE:~-8,3%-%DATE:~-11,2%_
 
-REM For avoiding space in time 
+REM For avoiding space in time
+SET hour=%time:~0,2%
 IF "%hour:~0,1%" == " " SET hour=0%hour:~1,1%
 SET min=%time:~3,2%
 IF "%min:~0,1%" == " " SET min=0%min:~1,1%
