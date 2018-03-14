@@ -1,6 +1,8 @@
 @ECHO OFF
-REM Setting date format legal for file name in windows 
+REM Setting date format legal for file name in windows (dd/mmm/yyyy) 
 SET LOGFILE_DATE=%DATE:~-4,4%-%DATE:~-8,3%-%DATE:~-11,2%
+
+REM Added a _ for separating date from time in folder name
 SET FILE_DATE=%DATE:~-4,4%-%DATE:~-8,3%-%DATE:~-11,2%_
 
 REM For avoiding space in time 
@@ -15,6 +17,7 @@ IF "%secs:~0,1%" == " " set secs=0%secs:~1,1%
 REM echo secs=%secs%
 
 SET LOGFILE_TIME=%hour%-%min%-%secs%
+
 SET FILE_TIME=%hour%%min%%secs%
 
 SET LOG_FILE=Backup_%LOGFILE_DATE%_%LOGFILE_TIME%.log
