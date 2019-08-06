@@ -1,14 +1,23 @@
 @ECHO OFF
-REM Setting date format legal for file name in windows (dd/mmm/yyyy) 
-SET LOGFILE_DATE=%DATE:~-4,4%-%DATE:~-8,3%-%DATE:~-11,2%
 
-REM Use below code if date format is (m/dd/yyy), Also use it in creating new folder
-REM LOGFILE_DATE=%DATE:~10,4%-%DATE:~4,2%-%DATE:~7,2%
+REM Before running this code check the date format in windows and remove REM in below lines where necessary
 
-REM Added an _ for separating date from time in folder name
-SET FOLDER_DATE=%DATE:~-4,4%-%DATE:~-8,3%-%DATE:~-11,2%_
+REM If date format is (dd-mmm-yy) then use below code by removing REM in below two lines
+REM SET LOGFILE_DATE=%DATE%
+REM SET FOLDER_DATE=%DATE%_
 
-REM For avoiding space in time
+
+REM If date format is (dd/mmm/yyyy) then use below code by removing REM in below two lines
+REM SET LOGFILE_DATE=%DATE:~-4,4%-%DATE:~-8,3%-%DATE:~-11,2%
+REM SET FOLDER_DATE=%DATE:~-4,4%-%DATE:~-8,3%-%DATE:~-11,2%_
+
+
+REM If date format is (m/dd/yyy) then use below code removing REM in below two lines
+REM SET LOGFILE_DATE=%DATE:~10,4%-%DATE:~4,2%-%DATE:~7,2%
+REM SET FOLDER_DATE=%DATE:~10,4%-%DATE:~4,2%-%DATE:~7,2%_
+
+
+REM For avoiding space in time when time is 24 hour format
 SET hour=%time:~0,2%
 IF "%hour:~0,1%" == " " SET hour=0%hour:~1,1%
 SET min=%time:~3,2%
@@ -23,7 +32,7 @@ SET FOLDER_TIME=%hour%%min%%secs%
 SET LOG_FILE=Backup_%LOGFILE_DATE%_%LOGFILE_TIME%.log
 
 REM If file is not shared then then use NET USE with user and pass to map the windows administrative share
-SET SRC="\\source\Data"
+SET SRC=\\source\Data
 
 REM Keep destination name without space, DON'T put "" in ROOT var value
 SET ROOT=\\Destination_Location
