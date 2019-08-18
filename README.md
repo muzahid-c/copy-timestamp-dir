@@ -7,8 +7,8 @@ in several backup scripts.
 
 ## Tech/framework used
 <b>Built with</b>
--[Batch file](https://en.wikipedia.org/wiki/Batch_file)
--[PowerShell](https://microsoft.com/powershell)
+- [Batch file](https://en.wikipedia.org/wiki/Batch_file)
+- [PowerShell](https://microsoft.com/powershell)
 
 ## License
 GNU General Public License v2.0
